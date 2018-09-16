@@ -53,6 +53,41 @@
         points: '1000',
         description: 'Descripcion Descripcion Descripcion Descripcion',
       },
+      mockup: {
+          client: {
+              firstName: 'Ana',
+              lastName: 'Fandino',
+              document: '10128392383',
+              birthday: '1996-01-01',
+              email: 'anafandino@gmail.com',
+              telephone: '12345678',
+              address: 'calle falsa 123',
+              points: 1800,
+              offers: [
+                  {
+                      id: 1,
+                      name: 'MacBook Pro touchbar 15 - 500 Puntos',
+                      description: 'Portatil macbook de 15 pulgadas con retina display',
+                      url: 'https://es.ifixit.com/Device/MacBook_Pro_15%22',
+                      photoUrl: 'https://d3nevzfk7ii3be.cloudfront.net/igi/qi6weLQwKQDud1rC.standard'
+                  },
+                  {
+                    id: 2,
+                    name: 'Zapatillas adidas set azul - 240 puntos',
+                    description: 'De cuero con lineas blancas',
+                    url: 'https://es.ifixit.com/Device/MacBook_Pro_15%22',
+                    photoUrl: 'https://d3nevzfk7ii3be.cloudfront.net/igi/qi6weLQwKQDud1rC.standard' 
+                  },
+                  {
+                    id: 3,
+                    name: 'Pista Dragon Blast Dragón - 300 puntos',
+                    description: 'Con la nueva pista de Hot wheels deberás usar a tus más potentes autos para vencer al dragón y liberar a los otros carros prisioneros de su tiranía!',
+                    url: 'https://ravtoys.com/producto/pista-dragon-blast-dragon-explosivo-de-hot-wheels/',
+                    photoUrl: 'https://ravtoys.com/wp-content/uploads/2017/07/dragon-pista-1.jpg' 
+                  }
+              ]
+          }
+      },
       show: false
     })
   }
