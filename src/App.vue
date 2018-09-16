@@ -18,7 +18,7 @@
                     </v-tab>
                     <v-tab-item>
                         <v-card flat>
-                            <HelloWorld msg="Welcome to Your Vue.js App"/>
+                            <Rewards/>
                         </v-card>
                     </v-tab-item>
                     <v-tab-item>
@@ -47,11 +47,13 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import Rewards from './components/Rewards.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+    Rewards
   },
   data: () => ({
     icons: [
