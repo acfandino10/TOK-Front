@@ -1,9 +1,9 @@
 <template>
     <div>
-        <v-tooltip v-if="notifyNow" fixed="true" abslute="true" top>
+        <!--<v-tooltip v-if="notifyNow" fixed="true" abslute="true" top>
             <span>{{notificationMessage}}</span>
         </v-tooltip>
-        <v-btn v-on:click="notifyExample()">Prueba Notificar</v-btn>
+        <v-btn v-on:click="notifyExample()">Prueba Notificar</v-btn>-->
         <div class="barra">
             <div class="points"> Tienes <b>{{mockup.client.points}}</b> puntos.</div>
             <v-btn class="staticsize" round color="#DF0E20" style="color:white;">
