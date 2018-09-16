@@ -23,6 +23,7 @@
                             <Offers/>
                         </v-card>
                     </v-tab-item>
+                    <div right class="intro" style="margin-left:13%;"> ¡ Hola, Juan !</div>
                 </v-tabs>
         </div>
         <div class="mainFooter">
@@ -96,6 +97,17 @@ export default {
     .fiximage {
         height: 50px;
         width: auto;
+    }
+
+    .intro{
+        font-family: 'Kaushan Script';
+        font-size: 1.5em;
+        color:white;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
     }
 
 </style>

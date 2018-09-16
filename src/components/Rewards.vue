@@ -1,14 +1,13 @@
 <template>
     <div>
-        <div class="intro"> Hola, Juan</div>
         <div class="barra">
-            <div class="staticsize points"> Tienes 9,000 puntos.</div>
+            <div class="points"> Tienes <b>9,000</b> puntos.</div>
             <v-btn class="staticsize" round color="#DF0E20" style="color:white;">
                 <v-progress-linear color="white" v-model="valueDeterminate"></v-progress-linear>
             </v-btn>
         </div>
         <div class="tags" style="padding:5%;">
-            <v-btn v-for="tag in tags" small="true" color="#DF0E20" style="color:white; font-weight: bold">{{tag}}</v-btn>
+            <v-btn v-for="tag in tags" small color="#DF0E20" style="color:white; font-weight: bold">{{tag}}</v-btn>
         </div>
         <v-flex xs12>
             <v-card>
@@ -79,25 +78,19 @@
   }
 </script>
 <style scoped>
-    @import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Crete+Round');
+    @import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Crete+Round|VT323');
 
     .cust-font-fam{
         font-family: 'Roboto', sans-serif !important;
         text-align: center;
     }
-    .intro{
-        font-family: 'Permanent Marker';
-        font-size: 4em;
-        text-align: center;
-        horiz-align: center;
-        padding:5%;
-    }
     .staticsize{
         width: 70%;
     }
     .points{
-        font-family: 'Crete Round';
+        font-family: 'VT323';
         padding:5%;
+        font-size:3em;
     }
 
 </style>

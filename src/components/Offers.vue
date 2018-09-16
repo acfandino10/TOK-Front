@@ -1,5 +1,9 @@
 <template>
-    <v-layout>
+    <div>
+        <div style="padding:5%;">
+            <h1 >¿Quieres conseguir más puntos?</h1><br/>
+            <div> Tenemos muchas opciones para ti !</div>
+        </div>
         <v-flex xs12>
             <v-card>
                 <v-container v-bind="{ [`grid-list-${size}`]: true }" fluid>
@@ -16,14 +20,7 @@
                                             <div class="cust-font-fam" v-if="reward.name.length>=8">{{ reward.name.substring(0,8)+".." }}</div>
                                         </h3>
                                         <div>
-                                            <div slot="activator" style="horiz-align: left; padding-left:3%;">
-                                                300 Puntos
-                                                <v-btn fab small @click="show = !show" color="#DF0E20" style="color:white;">
-                                                    <v-icon>vpn_key</v-icon>
-                                                </v-btn>
-                                            </div>
-
-                                            <div v-show="false" class="cust-font-fam grey--text"><h3>Te faltan 450 puntos</h3></div>
+                                            <div class="cust-font-fam grey--text"><h3>Gana 450 puntos</h3></div>
                                         </div>
                                     </div>
                                 </v-card-title>
@@ -38,7 +35,7 @@
                 </v-container>
             </v-card>
         </v-flex>
-    </v-layout>
+    </div>
 </template>
 <script>
   export default {
@@ -66,6 +63,9 @@
     .cust-font-fam{
         font-family: 'Roboto', sans-serif !important;
         text-align: center;
+    }
+    .texttitle {
+        font-family: 'VT323';
     }
 
 </style>
