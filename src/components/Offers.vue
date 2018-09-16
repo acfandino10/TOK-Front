@@ -76,14 +76,14 @@
                     name: 'Zapatillas adidas set azul - 240 puntos',
                     description: 'De cuero con lineas blancas',
                     url: 'https://es.ifixit.com/Device/MacBook_Pro_15%22',
-                    photoUrl: 'https://d3nevzfk7ii3be.cloudfront.net/igi/qi6weLQwKQDud1rC.standard' 
+                    photoUrl: 'https://d3nevzfk7ii3be.cloudfront.net/igi/qi6weLQwKQDud1rC.standard'
                   },
                   {
                     id: 3,
                     name: 'Pista Dragon Blast Dragón - 300 puntos',
                     description: 'Con la nueva pista de Hot wheels deberás usar a tus más potentes autos para vencer al dragón y liberar a los otros carros prisioneros de su tiranía!',
                     url: 'https://ravtoys.com/producto/pista-dragon-blast-dragon-explosivo-de-hot-wheels/',
-                    photoUrl: 'https://ravtoys.com/wp-content/uploads/2017/07/dragon-pista-1.jpg' 
+                    photoUrl: 'https://ravtoys.com/wp-content/uploads/2017/07/dragon-pista-1.jpg'
                   }
               ]
           }
@@ -98,9 +98,6 @@
     .cust-font-fam{
         font-family: 'Roboto', sans-serif !important;
         text-align: center;
-    }
-    .texttitle {
-        font-family: 'VT323';
     }
 
 </style>
