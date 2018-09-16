@@ -29,7 +29,7 @@
                             <div class="tags" v-if="showTags" style="padding:5%;">
                                 <v-btn v-for="tag in tags" :key="tag" class="tag" small color="white"
                                        style="color:#DF0E20;border: 0.8px solid #DF0E20 !important; font-weight: bold"
-                                       @click="selectedTag = tag">{{tag}}
+                                       @click="selectedTags.push(tag)">{{tag}}
                                 </v-btn>
                                 <v-btn v-on:click="toggleTags()" color="#DF0E20" style="color:white;font-weight: bold">
                                     Ok!
@@ -63,7 +63,8 @@
                                                                     <v-icon @click="toggleView(index)">arrow_drop_down
                                                                     </v-icon>
                                                                     <v-btn v-if="client.points >= reward.pointsCost"
-                                                                           round color="green" style="color:white;">
+                                                                           round color="green" style="color:white;"
+                                                                           @click="comprar(reward)">
                                                                         Comprar
                                                                     </v-btn>
                                                                     <div v-else round color="green"
@@ -72,7 +73,7 @@
                                                                                style="color:white;">
                                                                             <v-icon>credit_card</v-icon>
                                                                         </v-btn>
-                                                                        <v-btn v-on:click="buyWithFriends()" fab small
+                                                                        <v-btn v-on:click="buyWithFriends(reward)" fab small
                                                                                color="#DF0E20" style="color:white;">
                                                                             <v-icon>people</v-icon>
                                                                         </v-btn>
@@ -98,52 +99,52 @@
                     </v-card>
                 </v-tab-item>
                 <!--<v-tab-item>-->
-                    <!--<v-card flat>-->
-                        <!--<div>-->
-                            <!--<div style="padding:5%;">-->
-                                <!--<h1>¿Quieres conseguir más puntos?</h1><br/>-->
-                                <!--<div> Tenemos muchas opciones para ti !</div>-->
-                            <!--</div>-->
-                            <!--<v-flex xs12>-->
-                                <!--<v-card>-->
-                                    <!--<v-container v-bind="{ [`grid-list-${size}`]: true }" fluid>-->
-                                        <!--<v-layout row wrap>-->
-                                            <!--<v-flex v-for="n in 9" :key="n" xs6>-->
-                                                <!--<v-card class="smallersize">-->
-                                                    <!--<v-img :src="`https://unsplash.it/150/300?image=${Math.floor(Math.random() * 100) + 1}`"-->
-                                                           <!--height="130px">-->
-                                                    <!--</v-img>-->
-                                                    <!--<v-card-title primary-title-->
-                                                                  <!--style="padding-top:2%; padding-bottom:2%;">-->
-                                                        <!--<div></div>-->
-                                                        <!--<div>-->
-                                                            <!--<h3 class="headline mb-0">-->
-                                                                <!--<div class="cust-font-fam" v-if="reward.name.length<8">-->
-                                                                    <!--{{ reward.name }}-->
-                                                                <!--</div>-->
-                                                                <!--<div class="cust-font-fam" v-if="reward.name.length>=8">-->
-                                                                    <!--{{ reward.name.substring(0,8)+'..' }}-->
-                                                                <!--</div>-->
-                                                            <!--</h3>-->
-                                                            <!--<div>-->
-                                                                <!--<div class="cust-font-fam grey&#45;&#45;text"><h3>Gana 450-->
-                                                                    <!--puntos</h3></div>-->
-                                                            <!--</div>-->
-                                                        <!--</div>-->
-                                                    <!--</v-card-title>-->
-                                                    <!--<v-slide-y-transition>-->
-                                                        <!--<v-card-text v-show="show">-->
-                                                            <!--{{reward.description}}-->
-                                                        <!--</v-card-text>-->
-                                                    <!--</v-slide-y-transition>-->
-                                                <!--</v-card>-->
-                                            <!--</v-flex>-->
-                                        <!--</v-layout>-->
-                                    <!--</v-container>-->
-                                <!--</v-card>-->
-                            <!--</v-flex>-->
-                        <!--</div>-->
-                    <!--</v-card>-->
+                <!--<v-card flat>-->
+                <!--<div>-->
+                <!--<div style="padding:5%;">-->
+                <!--<h1>¿Quieres conseguir más puntos?</h1><br/>-->
+                <!--<div> Tenemos muchas opciones para ti !</div>-->
+                <!--</div>-->
+                <!--<v-flex xs12>-->
+                <!--<v-card>-->
+                <!--<v-container v-bind="{ [`grid-list-${size}`]: true }" fluid>-->
+                <!--<v-layout row wrap>-->
+                <!--<v-flex v-for="n in 9" :key="n" xs6>-->
+                <!--<v-card class="smallersize">-->
+                <!--<v-img :src="`https://unsplash.it/150/300?image=${Math.floor(Math.random() * 100) + 1}`"-->
+                <!--height="130px">-->
+                <!--</v-img>-->
+                <!--<v-card-title primary-title-->
+                <!--style="padding-top:2%; padding-bottom:2%;">-->
+                <!--<div></div>-->
+                <!--<div>-->
+                <!--<h3 class="headline mb-0">-->
+                <!--<div class="cust-font-fam" v-if="reward.name.length<8">-->
+                <!--{{ reward.name }}-->
+                <!--</div>-->
+                <!--<div class="cust-font-fam" v-if="reward.name.length>=8">-->
+                <!--{{ reward.name.substring(0,8)+'..' }}-->
+                <!--</div>-->
+                <!--</h3>-->
+                <!--<div>-->
+                <!--<div class="cust-font-fam grey&#45;&#45;text"><h3>Gana 450-->
+                <!--puntos</h3></div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</v-card-title>-->
+                <!--<v-slide-y-transition>-->
+                <!--<v-card-text v-show="show">-->
+                <!--{{reward.description}}-->
+                <!--</v-card-text>-->
+                <!--</v-slide-y-transition>-->
+                <!--</v-card>-->
+                <!--</v-flex>-->
+                <!--</v-layout>-->
+                <!--</v-container>-->
+                <!--</v-card>-->
+                <!--</v-flex>-->
+                <!--</div>-->
+                <!--</v-card>-->
                 <!--</v-tab-item>-->
                 <div right class="intro" style="margin-left:13%;"><span> ¡ Hola, {{client.firstName}} !</span></div>
             </v-tabs>
@@ -168,7 +169,7 @@
 </template>
 
 <script>
-    import swal from 'sweetalert'
+  import swal from 'sweetalert'
 
   export default {
     name: 'app',
@@ -190,7 +191,7 @@
       notifyNow: false,
       indexSelected: -1,
       notificationMessage: 'Haz comprado no se que cosas con éxito !',
-      valueDeterminate: 50,
+      valueDeterminate: 60,
       indexSelected: '1',
       size: 'md',
       items: [
@@ -206,7 +207,7 @@
         'Millas Lifemiles', 'Millas Latampass', 'Celulares'
       ],
       show: false,
-      selectedTag: null
+      selectedTags: []
     }),
     async mounted () {
       const param = window.location.search.replace('?', '').split('&').map(v => v.split('=')).map(v => ({[v[0]]: v[1]}))[0]
@@ -218,13 +219,14 @@
     },
     computed: {
       rewards () {
-        if (this.selectedTag) return this.rewardss.filter(r => r.category === this.selectedTag)
+        if (this.selectedTags.length > 0) return this.rewardss.filter(r => this.selectedTags.includes(r.category))
         else return this.rewardss
       }
     },
     methods: {
-      buyWithFriends () {
+      comprar () {
         swal({
+          title: '',
           text: 'Ingresa el número de tu amigo !',
           content: 'input',
           dangerMode: true,
@@ -233,9 +235,34 @@
             text: 'Ok!',
             closeModal: false,
           },
+        })
+      },
+      buyWithFriends (reward) {
+        swal({
+          text: 'Ingresa el número de tu amigo!',
+          content: 'input',
+          dangerMode: true,
+          icon: 'success',
+          button: {
+            text: 'Ok!',
+            closeModal: false,
+          },
         }).then(number => {
-          if (!number) throw null
+          if (!number) return
           swal.close()
+          fetch('https://nplat.inal.co/messages/text', {
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              text: `${this.client.firstName} te esta pidiendo ${reward.pointsCost - this.client.points} puntos para comprar ${reward.name}. Responde SI para aceptar`,
+              telephone: number,
+              allChannels: true,
+              fbMessengerTag: 'NON_PROMOTIONAL_SUBSCRIPTION'
+            }),
+            method: 'POST'
+          })
         })
       },
       toggleTags () {
