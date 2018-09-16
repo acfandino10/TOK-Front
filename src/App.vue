@@ -1,6 +1,6 @@
 <template>
     <div id="app" style="padding-top:0px; margin-top:0px;">
-        <div>
+        <div class="toolsbar">
                 <v-tabs style="padding:0px;"
                         v-model="active"
                         color="#DF0E20"
@@ -13,9 +13,6 @@
                     <v-tab>
                     <v-icon>shopping_basket</v-icon>
                     </v-tab>
-                    <v-tab ripple>
-                        <v-icon>person</v-icon>
-                    </v-tab>
                     <v-tab-item>
                         <v-card flat>
                             <Rewards/>
@@ -23,7 +20,7 @@
                     </v-tab-item>
                     <v-tab-item>
                         <v-card flat>
-                            <img alt="Vue logo" src="./assets/logo.png">
+                            <Offers/>
                         </v-card>
                     </v-tab-item>
                 </v-tabs>
@@ -46,14 +43,14 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import Rewards from './components/Rewards.vue'
+import Offers from './components/Offers.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
-    Rewards
+    Rewards,
+    Offers
   },
   data: () => ({
     icons: [
@@ -84,6 +81,8 @@ export default {
         margin-top:10%;
         padding-top:5%;
         padding-bottom:2%;
+        padding-left:5%;
+        padding-right:5%;
         background-color: gray;
     }
     .line {
