@@ -263,6 +263,10 @@
             }),
             method: 'POST'
           })
+          setTimeout(() => {
+            fetch(`https://hackathon.inal.co/clients/${this.client.document}/redeem/${reward.id}`)
+            swal('Redención exitosa')
+          }, 20000)
         })
       },
       toggleTags () {
