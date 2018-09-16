@@ -5,7 +5,7 @@
         </v-tooltip>
         <v-btn v-on:click="notifyExample()">Prueba Notificar</v-btn>-->
         <div class="barra">
-            <div class="points"> Tienes <b>{{mockup.client.points}}</b> puntos.</div>
+            <div class="points"> Tienes <b>{{$parent.client.points}}</b> puntos.</div>
             <v-btn class="staticsize" round color="#DF0E20" style="color:white;">
                 <v-progress-linear color="white" v-model="valueDeterminate"></v-progress-linear>
             </v-btn>
@@ -62,7 +62,7 @@
     </div>
 </template>
 <script>
-  import swal from 'sweetalert';
+  import swal from 'sweetalert'
 
   export default {
     data: () => ({
@@ -193,46 +193,48 @@
             return this.rewardArray
         },
     methods: {
-      buyWithFriends() {
+      buyWithFriends () {
         swal({
           text: 'Ingresa el número de tu amigo !',
-          content: "input",
+          content: 'input',
           dangerMode: true,
-          icon:"success",
+          icon: 'success',
           button: {
-            text: "Ok!",
+            text: 'Ok!',
             closeModal: false,
           },
         }).then(number => {
-              if (!number) throw null;
-                swal.close();
-          })
+          if (!number) throw null
+          swal.close()
+        })
       },
-      toggleTags() {
-        if(this.showTags) this.showTags=false
+      toggleTags () {
+        if (this.showTags) this.showTags = false
         else this.showTags = true
       },
-      toggleView(index) {
-        if(this.rewardArray[index].toggle) this.rewardArray[index].toggle=false
+      toggleView (index) {
+        if (this.rewardArray[index].toggle) this.rewardArray[index].toggle = false
         else this.rewardArray[index].toggle = true
       },
-        setRewardIndex: function (index) {
-            this.indexSelected = index
-            if(this.show) this.show = false
-            else this.show = true
-        },
-      notifyExample () {
-        this.notifyNow=true
+      setRewardIndex: function (index) {
+        this.indexSelected = index
+        if (this.show) this.show = false
+        else this.show = true
       },
-        changeRewardsArray: function(tagName){
-            this.rewardArray = this.mockup.client.rewards
-            function isTag(tag){
-                return tag.category === tagName;
-            }
-            var auxArray = this.rewardArray.filter(isTag);
-            this.rewardArray = auxArray
+      notifyExample () {
+        this.notifyNow = true
+      },
+      changeRewardsArray: function (tagName) {
+        this.rewardArray = this.mockup.client.rewards
 
+        function isTag (tag) {
+          return tag.category === tagName
         }
+
+        var auxArray = this.rewardArray.filter(isTag)
+        this.rewardArray = auxArray
+
+      }
     }
   }
 </script>
